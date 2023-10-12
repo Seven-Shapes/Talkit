@@ -169,6 +169,21 @@ Node styles
 
 }
 
+.node input[type="localization"]
+{
+	/* Enable interacting with inputs only. */
+	pointer-events: auto;	
+	border: none;
+	box-sizing: border-box;
+	background-color: #456;
+	color: #fff;
+    width: 50%;
+	padding: 4px;
+    margin-right: 10px;
+    float:right;
+
+}
+
 
 .node input[type="choice"]
 {

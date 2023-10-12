@@ -147,6 +147,7 @@ joint.shapes.dialogue.BaseView = joint.shapes.devs.ModelView.extend(
 		'<span class="label"></span>',
 		'<button class="delete">x</button>',
         '<input type="actor" class="actor" placeholder="Actor" />',
+		'<input type="localization" class="localization" placeholder="Loca" />',
         '<p> <textarea type="text" class="name" rows="4" cols="27" placeholder="Speech"></textarea></p>',
         '</div>',
 	].join(''),
@@ -175,6 +176,10 @@ joint.shapes.dialogue.BaseView = joint.shapes.devs.ModelView.extend(
 	    // This is an example of reacting on the input change and storing the input data in the cell model.
 		this.$box.find('input.actor').on('input', _.bind(function (evt) {
 		    this.model.set('actor', $(evt.target).val());
+		}, this));
+
+		this.$box.find('input.localization').on('input', _.bind(function (evt) {
+		    this.model.set('localization', $(evt.target).val());
 		}, this));
 
 
@@ -214,6 +219,10 @@ joint.shapes.dialogue.BaseView = joint.shapes.devs.ModelView.extend(
 		var actorField = this.$box.find('input.actor');
 		if (!actorField.is(':focus'))
 		    actorField.val(this.model.get('actor'));
+
+		var locaField = this.$box.find('input.localization');
+		if (!locaField.is(':focus'))
+		locaField.val(this.model.get('localization'));
 
 	    // Example of updating the HTML with a data stored in the cell model.
 		var textAreaField = this.$box.find('textarea.name');
@@ -341,6 +350,7 @@ joint.shapes.dialogue.Text = joint.shapes.devs.Model.extend(
 			inPorts: ['input'],
 			outPorts: ['output'],
 			actor: '',
+			localization: '',
 			textarea: 'Start writing',
 			attrs:
 			{
@@ -540,6 +550,7 @@ function gameData()
 				type: cell.type.slice('dialogue.'.length),
 				id: cell.id,
 				actor: cell.actor,
+				localization: cell.localization,
                 title: cell.title,
 			};
 			if (node.type == 'Branch')
@@ -569,6 +580,7 @@ function gameData()
 			else
 			{
 			    node.actor = cell.actor;
+				node.localization = cell.localization;
 				node.name = cell.name;
 				node.next = null;
 			}
