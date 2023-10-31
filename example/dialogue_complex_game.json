@@ -1,0 +1,119 @@
+[
+    {
+        "type": "Text",
+        "id": "1cc52bb8-8092-46e5-8c39-201d10664c29",
+        "actor": "Julien",
+        "localization": "TEST_LOCA_KEY_01",
+        "name": "Hello, this is Julien, it's a nice weather today no ?",
+        "choices": [
+            "c18e9a10-3ec2-4eea-b6e1-71b919553b49",
+            "68f6308e-84db-49c7-80da-4c4ecc035d5a"
+        ]
+    },
+    {
+        "type": "Choice",
+        "id": "c18e9a10-3ec2-4eea-b6e1-71b919553b49",
+        "localization": "TEST_LOCA_KEY_02",
+        "title": "Happy",
+        "name": "Yes, I love a sunny day! I feel like the sun touching my skin gives me energy and recharges me for the rest of the day!",
+        "next": "a2a58c25-788b-4f16-b972-9d7f4efc0ff6"
+    },
+    {
+        "type": "Choice",
+        "id": "68f6308e-84db-49c7-80da-4c4ecc035d5a",
+        "localization": "TEST_LOCA_KEY_03",
+        "title": "Angry",
+        "name": "The sun is burning my ass today, of course it's not a \"nice weather\" 😡",
+        "next": "619b7f8e-77cf-40a9-a8a7-387945129ff8"
+    },
+    {
+        "type": "Text",
+        "id": "9401804b-ae3a-4d0b-80d5-272e2d8addee",
+        "actor": "Julien",
+        "localization": "TEST_LOCA_KEY_04",
+        "name": "Great! I'd like to ask you a favor please...",
+        "next": "e98a84e9-5279-4395-87ee-406ad6db2382"
+    },
+    {
+        "type": "Text",
+        "id": "a4e9484a-f6b6-4b63-918c-61d309517ac9",
+        "actor": "Julien",
+        "localization": "TEST_LOCA_KEY_05",
+        "name": "Someone has woken from the wrong side of the bed today. Anyway...",
+        "next": "e98a84e9-5279-4395-87ee-406ad6db2382"
+    },
+    {
+        "type": "Text",
+        "id": "e98a84e9-5279-4395-87ee-406ad6db2382",
+        "actor": "Julien",
+        "localization": "TEST_LOCA_KEY_06",
+        "name": "The clients are not happy and we would like to re-build the whole school from scratch. You won't get paid for a whole year but you'll get free meal everyday! What do you think?",
+        "next": "aa71cf19-308a-4de9-91c8-0f6e536f91cb"
+    },
+    {
+        "type": "Branch",
+        "id": "aa71cf19-308a-4de9-91c8-0f6e536f91cb",
+        "variable": "Talked",
+        "branches": {
+            "false": "1cc52bb8-8092-46e5-8c39-201d10664c29",
+            "true": "a7068fbb-1dad-4157-af79-ada795adbe0c",
+            "_default": "1cc52bb8-8092-46e5-8c39-201d10664c29"
+        }
+    },
+    {
+        "type": "Text",
+        "id": "a7068fbb-1dad-4157-af79-ada795adbe0c",
+        "actor": "Julien",
+        "localization": "TEST_LOCA_KEY_01",
+        "name": "Hello, this is Julien, it's a nice weather today no ?",
+        "choices": [
+            "c18e9a10-3ec2-4eea-b6e1-71b919553b49",
+            "68f6308e-84db-49c7-80da-4c4ecc035d5a",
+            "d932629c-f596-4d4d-955a-5e747e479e3c"
+        ]
+    },
+    {
+        "type": "Choice",
+        "id": "d932629c-f596-4d4d-955a-5e747e479e3c",
+        "localization": "TEST_LOCA_KEY_07",
+        "title": "None",
+        "name": "We have already talked",
+        "next": "c4eef209-e94c-4d30-aece-a3119fd7fc67"
+    },
+    {
+        "type": "Set",
+        "id": "a2a58c25-788b-4f16-b972-9d7f4efc0ff6",
+        "variable": "Talked",
+        "value": "true",
+        "next": "9401804b-ae3a-4d0b-80d5-272e2d8addee"
+    },
+    {
+        "type": "Set",
+        "id": "619b7f8e-77cf-40a9-a8a7-387945129ff8",
+        "variable": "Talked",
+        "value": "true",
+        "next": "a4e9484a-f6b6-4b63-918c-61d309517ac9"
+    },
+    {
+        "type": "Node",
+        "id": "832d67cc-8523-411f-899d-ab566b84a9b7",
+        "actor": "Start",
+        "name": "",
+        "next": "aa71cf19-308a-4de9-91c8-0f6e536f91cb"
+    },
+    {
+        "type": "Node",
+        "id": "a6b552d5-c571-44c0-bf0c-c6c9fc3a778c",
+        "actor": "Exit",
+        "name": "",
+        "next": null
+    },
+    {
+        "type": "Text",
+        "id": "c4eef209-e94c-4d30-aece-a3119fd7fc67",
+        "actor": "Julien",
+        "localization": "TEST_LOCA_KEY_08",
+        "name": "Oh, I must have forgotten... I guess with age comes alzheimer and not wisdom, lol.",
+        "next": "a6b552d5-c571-44c0-bf0c-c6c9fc3a778c"
+    }
+]
