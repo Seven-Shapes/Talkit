@@ -878,6 +878,119 @@ function addFileEntry(name) {
 	});
 }
 
+function createDialogueNodesFromCSV(csvData) {
+    const nodes = [];
+    csvData.forEach(row => {
+        const node = new joint.shapes.dialogue.Text({
+            position: { x: 100, y: 100 }, // Set initial position; you might want to adjust this
+            actor: row.Actor,
+            localization: row.Key,
+            name: row.DialogueText,
+            // Add other node properties as needed
+        });
+        nodes.push(node);
+    });
+    return nodes;
+}
+
+function connectDialogueNodes(nodes) {
+    for (let i = 0; i < nodes.length - 1; i++) {
+        const link = new joint.dia.Link({
+            source: { id: nodes[i].id },
+            target: { id: nodes[i + 1].id },
+            // You can add more link properties if needed
+        });
+        graph.addCell(link);
+    }
+}
+
+function parseCSV(csvData) {
+    const rows = csvData.split('\n').filter(row => row.trim()); // Split into rows and remove empty lines
+    const headers = rows[0].split(',').map(header => header.trim()); // Assume the first row contains headers
+
+    return rows.slice(1).map(row => {
+        const columns = row.split(',').map(column => column.trim()); // Split each row into columns
+        const rowData = {};
+        headers.forEach((header, index) => {
+            rowData[header] = columns[index] || ''; // Use an empty string if the column is undefined
+        });
+        return rowData;
+    });
+}
+
+
+// Function to create dialogue nodes from CSV data
+function createDialogueNodesFromCSV(csvData) {
+    const dialogueData = parseCSV(csvData);
+    const nodes = [];
+    dialogueData.forEach((row, index) => {
+        const node = new joint.shapes.dialogue.Text({
+            position: { x: 100, y: 100 + index * 160 }, // Adjust position for each node
+            actor: row.Actor || '',
+            localization: row.Key || '',
+            name: row.DialogueText || '',
+            // Set other properties as needed
+        });
+        nodes.push(node);
+    });
+    return nodes;
+}
+
+
+// Function to connect dialogue nodes
+function connectDialogueNodes(nodes) {
+    for (let i = 0; i < nodes.length - 1; i++) {
+        const link = new joint.dia.Link({
+            source: { id: nodes[i].id },
+            target: { id: nodes[i + 1].id }
+        });
+        graph.addCell(link);
+    }
+}
+
+// Function to handle CSV file import
+function importCSV() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.csv';
+    input.onchange = e => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = event => {
+            const text = event.target.result;
+            const nodes = createDialogueNodesFromCSV(text);
+            graph.addCells(nodes);
+            connectDialogueNodes(nodes);
+			updateCanvasSize();
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
+
+function updateCanvasSize() {
+    let maxX = 0, maxY = 0;
+    const margin = 100; // Margin around the farthest elements
+    const minSize = { width: 1000, height: 1000 }; // Minimum size
+
+    graph.getElements().forEach(element => {
+        const bbox = element.getBBox();
+        const { x, y, width, height } = bbox;
+        maxX = Math.max(maxX, x + width);
+        maxY = Math.max(maxY, y + height);
+    });
+
+    maxX += margin;
+    maxY += margin;
+
+    // Ensure the canvas is at least the minimum size
+    maxX = Math.max(maxX, minSize.width);
+    maxY = Math.max(maxY, minSize.height);
+
+    paper.setDimensions(maxX, maxY);
+}
+
+
 (function () {
 	for (var i = 0; i < localStorage.length; i++)
 		addFileEntry(localStorage.key(i));
@@ -907,6 +1020,7 @@ $('#paper').contextmenu(
 				{ text: 'New', alias: '2-4', action: popUpToClear },
 				{ text: 'Export', id: 'export', alias: '2-5', action: exportFile },
 				{ text: 'Export game file', id: 'export-game', alias: '2-6', action: exportGameFile },
+				{ text: 'Import from CSV', id: 'import-csv', alias : '2-7', action: importCSV },
 			]
 	});
 
