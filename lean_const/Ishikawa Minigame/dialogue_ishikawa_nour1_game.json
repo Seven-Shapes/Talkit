@@ -1,0 +1,219 @@
+[
+    {
+        "type": "Node",
+        "id": "d89e77ac-fab4-4b36-a3a1-4f8cd1b42ac6",
+        "actor": "Start",
+        "name": "",
+        "next": "1aecd089-d220-4998-b09a-187399ce8623"
+    },
+    {
+        "type": "Text",
+        "id": "1aecd089-d220-4998-b09a-187399ce8623",
+        "actor": "Nour",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_01",
+        "name": "Bonjour ! On m'a dit que vous passeriez me voir. Que puis-je pour vous ?",
+        "choices": [
+            "b6c7b5c4-2715-4e5c-9a95-8d9a78ca184c",
+            "d7da363f-4208-43ee-9088-2e44714835b5",
+            "9461510c-089b-4b28-9f90-c3785c9f1a8d",
+            "231f5356-0891-484e-889c-bfc83556d78d",
+            "3648492e-6c65-4581-97fe-4ca7499c35da"
+        ]
+    },
+    {
+        "type": "Choice",
+        "id": "b6c7b5c4-2715-4e5c-9a95-8d9a78ca184c",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_CHOICENOUR_01",
+        "title": "",
+        "name": "Bonjour Nour. Vous êtes l'étancheuse, c'est bien cela ?",
+        "next": "524c647f-5972-4bd9-863a-b566b846ca77"
+    },
+    {
+        "type": "Text",
+        "id": "524c647f-5972-4bd9-863a-b566b846ca77",
+        "actor": "Nour",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_02",
+        "name": "Oui. Je m'occupe de l'enveloppe du bâtiment et de protéger les toitures et terrasses",
+        "next": "4bf9d290-3ce3-4778-8bd9-d3f8f5f09808"
+    },
+    {
+        "type": "Choice",
+        "id": "d7da363f-4208-43ee-9088-2e44714835b5",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_CHOICEMAHALIA_02",
+        "title": "",
+        "name": "Avez-vous entendu parler des soucis de la chambre 012?",
+        "next": "eb3b3858-0144-4ed2-94b0-6fed56fd9151"
+    },
+    {
+        "type": "Text",
+        "id": "eb3b3858-0144-4ed2-94b0-6fed56fd9151",
+        "actor": "Nour",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_03",
+        "name": "Oui, Soan et Mahalia m'en ont parlé. Je vois pas d'où peut venir le soucis, tout était en ordre lors de mon passage.",
+        "next": "4bf9d290-3ce3-4778-8bd9-d3f8f5f09808"
+    },
+    {
+        "type": "Choice",
+        "id": "9461510c-089b-4b28-9f90-c3785c9f1a8d",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_CHOICENOUR_03",
+        "title": "",
+        "name": "Avez-vous eu des changements dans votre manière de travailler récemment?",
+        "next": "e7782fd7-471e-4671-88e2-ef364d095ac7"
+    },
+    {
+        "type": "Text",
+        "id": "e7782fd7-471e-4671-88e2-ef364d095ac7",
+        "actor": "Nour",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_04",
+        "name": "\"Non, rien de nouveau. Ah si, cela n'a pas changé ma manière de travailler, mais on a un nouveau fournisseur d'isolants.",
+        "next": "6eec6f84-7d4a-43be-8497-878bc043445f"
+    },
+    {
+        "type": "Choice",
+        "id": "231f5356-0891-484e-889c-bfc83556d78d",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_CHOICENOUR_04",
+        "title": "Milieu",
+        "name": "Avez-vous d'autres informations que vous voudriez me donner?",
+        "next": "6a6422e4-eb11-44de-93fc-547e727bc463"
+    },
+    {
+        "type": "Text",
+        "id": "6a6422e4-eb11-44de-93fc-547e727bc463",
+        "actor": "Nour",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_05",
+        "name": "J'aimerais que l'on fasse plus d'efforts pour réduire nos déchets... C'est démotivant de voir à quel point on est nuls sur ce sujet",
+        "next": "95293eaf-b30a-4eb2-bbad-7c613d31266a"
+    },
+    {
+        "type": "Choice",
+        "id": "3648492e-6c65-4581-97fe-4ca7499c35da",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_CHOICENOUR_05",
+        "title": "",
+        "name": "Vous avez une autre idée en tête ?",
+        "next": "1afbb507-276a-40c7-b25c-915ecd12fc63"
+    },
+    {
+        "type": "Text",
+        "id": "1afbb507-276a-40c7-b25c-915ecd12fc63",
+        "actor": "Nour",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_06",
+        "name": "\"Vu l'apparence du placo, cela pourrait être une inondation par l'intérieur des murs. ",
+        "next": "c5b72cbb-7449-4c74-bfd5-941059a6e72b"
+    },
+    {
+        "type": "Set",
+        "id": "c5b72cbb-7449-4c74-bfd5-941059a6e72b",
+        "variable": "Event",
+        "value": "Milieu",
+        "next": "d26c0648-76f2-4d30-a127-2cf65281ea20"
+    },
+    {
+        "type": "Set",
+        "id": "d26c0648-76f2-4d30-a127-2cf65281ea20",
+        "variable": "Milieu",
+        "value": "true",
+        "next": "4bf9d290-3ce3-4778-8bd9-d3f8f5f09808"
+    },
+    {
+        "type": "Choice",
+        "id": "f57f24bd-5f73-4c8c-a061-536bcef6cefd",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_CHOICENOUR_06",
+        "title": "",
+        "name": "Merci pour votre temps",
+        "next": "64110a36-0f63-4432-acf4-e58935c441ef"
+    },
+    {
+        "type": "Node",
+        "id": "9bbb1a44-5cc9-4cf0-9edd-548aa0f3fa6a",
+        "actor": "End",
+        "name": "",
+        "next": null
+    },
+    {
+        "type": "Branch",
+        "id": "4bf9d290-3ce3-4778-8bd9-d3f8f5f09808",
+        "variable": "Matiere",
+        "branches": {
+            "true": "3fe56e15-f0cb-4bba-aa3e-ab1dd331ba38",
+            "_default": "1aecd089-d220-4998-b09a-187399ce8623"
+        }
+    },
+    {
+        "type": "Branch",
+        "id": "3fe56e15-f0cb-4bba-aa3e-ab1dd331ba38",
+        "variable": "Milieu",
+        "branches": {
+            "true": "25eb944d-a715-4d32-8032-4c97b4170fd8",
+            "_default": "1aecd089-d220-4998-b09a-187399ce8623"
+        }
+    },
+    {
+        "type": "Text",
+        "id": "25eb944d-a715-4d32-8032-4c97b4170fd8",
+        "actor": "Nour",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_01",
+        "name": "Bonjour ! On m'a dit que vous passeriez me voir. Que puis-je pour vous ?",
+        "choices": [
+            "b6c7b5c4-2715-4e5c-9a95-8d9a78ca184c",
+            "9461510c-089b-4b28-9f90-c3785c9f1a8d",
+            "231f5356-0891-484e-889c-bfc83556d78d",
+            "3648492e-6c65-4581-97fe-4ca7499c35da",
+            "d7da363f-4208-43ee-9088-2e44714835b5",
+            "f57f24bd-5f73-4c8c-a061-536bcef6cefd"
+        ]
+    },
+    {
+        "type": "Text",
+        "id": "95293eaf-b30a-4eb2-bbad-7c613d31266a",
+        "actor": "Julien",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_JULIEN_01",
+        "name": "\"Intéressant... Mais même si Nour parle de démotivation, ça ne semble pas être une cause de notre problème. Ne notons donc pas cette cause dans notre diagramme\nOK\"",
+        "next": "4bf9d290-3ce3-4778-8bd9-d3f8f5f09808"
+    },
+    {
+        "type": "Set",
+        "id": "6eec6f84-7d4a-43be-8497-878bc043445f",
+        "variable": "Event",
+        "value": "Matiere",
+        "next": "5d6817f3-f324-47bb-b527-04c5a4624420"
+    },
+    {
+        "type": "Set",
+        "id": "5d6817f3-f324-47bb-b527-04c5a4624420",
+        "variable": "Matiere",
+        "value": "true",
+        "next": "4bf9d290-3ce3-4778-8bd9-d3f8f5f09808"
+    },
+    {
+        "type": "Text",
+        "id": "64110a36-0f63-4432-acf4-e58935c441ef",
+        "actor": "Nour",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_07",
+        "name": "Ah, une dernière chose : Vous veniez de me dire que vous aviez recemment changé de fournisseur. Pensez-vous que les nouveaux isolants puissent être la cause du dégat?",
+        "next": "0a5c7113-dd20-4011-aa23-47f587fc26a8"
+    },
+    {
+        "type": "Text",
+        "id": "0a5c7113-dd20-4011-aa23-47f587fc26a8",
+        "actor": "Julien",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_CHOICENOUR_07",
+        "name": "Non je ne pense pas, normalement les isolants répondent tous à des normes très strictes. Mais je peux quand même aller vérifier si vous le souhaitez.",
+        "next": "fec7d04c-37cc-451c-acae-1a51fd7d06ef"
+    },
+    {
+        "type": "Text",
+        "id": "fec7d04c-37cc-451c-acae-1a51fd7d06ef",
+        "actor": "Nour",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_08",
+        "name": "Oui s'il vous plait. Cela pourrait nous aider à déterminer si c'est une cause viable ou pas. Je repasse vous voir plus tard",
+        "next": "9672d60c-876d-4b2e-ba08-cc71408d15b2"
+    },
+    {
+        "type": "Text",
+        "id": "9672d60c-876d-4b2e-ba08-cc71408d15b2",
+        "actor": "Julien",
+        "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_CHOICENOUR_08",
+        "name": "Parfait on avance",
+        "next": "9bbb1a44-5cc9-4cf0-9edd-548aa0f3fa6a"
+    }
+]
