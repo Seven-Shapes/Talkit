@@ -187,7 +187,7 @@
     {
         "type": "Text",
         "id": "64110a36-0f63-4432-acf4-e58935c441ef",
-        "actor": "Nour",
+        "actor": "Julien",
         "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_07",
         "name": "Ah, une dernière chose : Vous veniez de me dire que vous aviez recemment changé de fournisseur. Pensez-vous que les nouveaux isolants puissent être la cause du dégat?",
         "next": "0a5c7113-dd20-4011-aa23-47f587fc26a8"
@@ -195,7 +195,7 @@
     {
         "type": "Text",
         "id": "0a5c7113-dd20-4011-aa23-47f587fc26a8",
-        "actor": "Julien",
+        "actor": "Nour",
         "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_CHOICENOUR_07",
         "name": "Non je ne pense pas, normalement les isolants répondent tous à des normes très strictes. Mais je peux quand même aller vérifier si vous le souhaitez.",
         "next": "fec7d04c-37cc-451c-acae-1a51fd7d06ef"
@@ -203,7 +203,7 @@
     {
         "type": "Text",
         "id": "fec7d04c-37cc-451c-acae-1a51fd7d06ef",
-        "actor": "Nour",
+        "actor": "Julien",
         "localization": "LC_MINIGAME_ISHIKAWA_DIALOG_NOUR_08",
         "name": "Oui s'il vous plait. Cela pourrait nous aider à déterminer si c'est une cause viable ou pas. Je repasse vous voir plus tard",
         "next": "9672d60c-876d-4b2e-ba08-cc71408d15b2"
