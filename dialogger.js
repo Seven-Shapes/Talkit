@@ -244,6 +244,7 @@ joint.shapes.dialogue.ChoiceView = joint.shapes.devs.ModelView.extend(
 				'<input type="localization" class="localization" placeholder="Loca" />',
 				'<br/>',
 				'<p> <textarea type="text" class="name" rows="4" cols="27" placeholder="Speech"></textarea></p>',
+				'<input type="mood" class="mood" placeholder="MoodScore" />',
 				'</div>',
 
 			].join(''),
@@ -273,6 +274,10 @@ joint.shapes.dialogue.ChoiceView = joint.shapes.devs.ModelView.extend(
 			// This is an example of reacting on the input change and storing the input data in the cell model.
 			this.$box.find('input.localization').on('input', _.bind(function (evt) {
 				this.model.set('localization', $(evt.target).val());
+			}, this));
+
+			this.$box.find('input.mood').on('input', _.bind(function (evt) {
+				this.model.set('mood', $(evt.target).val());
 			}, this));
 
 			this.$box.find('.delete').on('click', _.bind(this.model.remove, this.model));
@@ -307,6 +312,10 @@ joint.shapes.dialogue.ChoiceView = joint.shapes.devs.ModelView.extend(
 			var locaField = this.$box.find('input.localization');
 			if (!locaField.is(':focus'))
 				locaField.val(this.model.get('localization'));
+
+			var moodField = this.$box.find('input.mood');
+			if (!moodField.is(':focus'))
+				moodField.val(this.model.get('mood'));
 
 
 			var label = this.$box.find('.label');
@@ -370,12 +379,13 @@ joint.shapes.dialogue.Choice = joint.shapes.devs.Model.extend(
 		defaults: joint.util.deepSupplement
 			(
 				{
-					size: { width: 250, height: 135 },
+					size: { width: 250, height: 200 },
 					type: 'dialogue.Choice',
 					inPorts: ['input'],
 					outPorts: ['output'],
 					title: '',
 					localization: '',
+					mood:'',
 					name: '',
 				},
 				joint.shapes.dialogue.Base.prototype.defaults
@@ -559,6 +569,7 @@ function gameData() {
 				node.name = cell.name;
 				node.title = cell.title;
 				node.localization = cell.localization,
+				node.mood = cell.mood;
 				node.next = null;
 
 			}
@@ -885,6 +896,7 @@ function createDialogueNodesFromCSV(csvData) {
             position: { x: 100, y: 100 }, // Set initial position; you might want to adjust this
             actor: row.Actor,
             localization: row.Key,
+			mood: row.mood,
             name: row.DialogueText,
             // Add other node properties as needed
         });
@@ -928,6 +940,7 @@ function createDialogueNodesFromCSV(csvData) {
             position: { x: 100, y: 100 + index * 160 }, // Adjust position for each node
             actor: row.Actor || '',
             localization: row.Key || '',
+			mood: row.mood || '',
             name: row.DialogueText || '',
             // Set other properties as needed
         });

@@ -183,6 +183,20 @@ Node styles
     float:left;
 }
 
+.node input[type="mood"]
+{
+	/* Enable interacting with inputs only. */
+	pointer-events: auto;	
+	border: none;
+	box-sizing: border-box;
+	background-color: #456;
+	color: #fff;
+    width: 80%;
+	padding: 4px;
+    margin-left: 10px;
+    float:left;
+}
+
 
 .node input[type="choice"]
 {
